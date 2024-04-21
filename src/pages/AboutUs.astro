@@ -1,0 +1,23 @@
+---
+// Importeer de benodigde componenten
+import Layout from '../layouts/Layout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import ContentSection from '../components/ContentSection.astro';
+import TeamMemberBio from '../components/TeamMemberBio.astro';
+import CertificationSection from '../components/CertificationSection.astro';
+---
+
+<Layout>
+  <HeroBanner title="Over ons" imageSrc="/path-to-hero-image.jpg" />
+  
+  <!-- Meerdere ContentSection componenten voor elke tekstblok -->
+  <ContentSection title="Wij helpen jouw droom realiseren..." content="Een zorgeloze aankoop van een woning in Javea..." />
+  <!-- ... meer ContentSection componenten zoals nodig ... -->
+
+  <!-- TeamMemberBio componenten voor elk teamlid -->
+  <TeamMemberBio name="Bernard Kochen" position="Jouw makelaar" imageSrc="/path-to-bernard-image.jpg" content="Van jongs af aan heb ik een levendige verbeeldingskracht en een grote interesse in architectuur..." />
+  <!-- ... meer TeamMemberBio componenten voor andere teamleden als die er zijn ... -->
+
+  <CertificationSection certificationImageSrc="/path-to-certification-logo.jpg" content="Wij zijn lid van de Spaanse Vereniging van Makelaars en zijn..." />
+
+</Layout>
