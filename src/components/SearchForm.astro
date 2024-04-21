@@ -1,0 +1,58 @@
+---
+// SearchForm.astro
+---
+
+<div class="relative">
+    <!-- Search Form Header -->
+    <div class="text-2xl font-semibold text-white text-center mb-4">SEARCH</div>
+    
+    <form class="space-y-3 bg-transparent p-4">
+      <input type="text" placeholder="Search reference number" class="w-full border border-white text-white placeholder-white bg-transparent p-2">
+      
+      <div class="flex gap-3">
+        <input type="text" placeholder="City" class="flex-1 border border-white text-white placeholder-white bg-transparent p-2">
+        <select name="property-type" class="flex-1 border border-white text-white bg-transparent p-2">
+          <option value="">Property type</option>
+          <!-- Opties -->
+        </select>
+      </div>
+  
+      <div class="flex gap-3">
+        <select name="bedrooms" class="flex-1 border border-white text-white bg-transparent p-2">
+          <option value="">Bedrooms</option>
+          <!-- Opties -->
+        </select>
+        <select name="bathrooms" class="flex-1 border border-white text-white bg-transparent p-2">
+          <option value="">Bathrooms</option>
+          <!-- Opties -->
+        </select>
+      </div>
+  
+      <div class="flex gap-3">
+        <select name="min-size" class="flex-1 border border-white text-white bg-transparent p-2">
+          <option value="">Min size</option>
+          <!-- Opties -->
+        </select>
+        <select name="max-size" class="flex-1 border border-white text-white bg-transparent p-2">
+          <option value="">Max size</option>
+          <!-- Opties -->
+        </select>
+      </div>
+  
+      <div class="flex gap-3">
+        <select name="min-price" class="flex-1 border border-white text-white bg-transparent p-2">
+          <option value="">Min price</option>
+          <!-- Opties -->
+        </select>
+        <select name="max-price" class="flex-1 border border-white text-white bg-transparent p-2">
+          <option value="">Max price</option>
+          <!-- Opties -->
+        </select>
+      </div>
+  
+      <div class="flex justify-end mt-4">
+        <button type="submit" class="bg-yellow-500 text-white px-6 py-2 hover:bg-yellow-600 focus:outline-none focus:ring-opacity-50 transition-colors">SEARCH</button>
+      </div>
+    </form>
+  </div>
+  
