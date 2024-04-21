@@ -1,0 +1,33 @@
+---
+// HeroSection.astro
+// Hier kan je wat component-specifieke logica toevoegen indien nodig.
+---
+
+<div class="relative bg-cover bg-center bg-no-repeat h-screen flex items-center justify-center" style="background-image: url('/assets/images/mediterranean-interior-and-olive-plant-exterior-javea-scaled.jpg');">
+  <div class="text-center text-white">
+    <h1 class="text-4xl font-bold mb-2">DESEO HOMES</h1>
+    <p class="text-2xl mb-6">PROPERTY ADVISORS</p>
+    <h2 class="text-3xl font-semibold mb-4">Laat jouw droom uitkomen in Javea</h2>
+    <div class="inline-block bg-opacity-50 backdrop-filter backdrop-blur-md rounded p-6">
+      <!-- Zoekformulier -->
+      <form class="space-y-4">
+        <div class="flex flex-col md:flex-row md:space-x-2">
+          <input type="text" placeholder="Search reference number" class="w-full mb-2 md:mb-0">
+          <input type="text" placeholder="City" class="w-full mb-2 md:mb-0">
+          <select name="property-type" class="w-full mb-2 md:mb-0">
+            <option value="">Property type</option>
+            <!-- Voeg meer opties toe -->
+          </select>
+          <!-- Herhaal select/input velden voor Bedrooms, Bathrooms, etc. -->
+        </div>
+        <div class="flex justify-between">
+          <button type="submit" class="px-6 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600">SEARCH</button>
+        </div>
+      </form>
+    </div>
+    <div class="flex space-x-4 mt-6">
+      <a href="/woningaanbod" class="bg-yellow-500 text-white px-6 py-2 rounded hover:bg-yellow-600 transition-colors">Woningaanbod</a>
+      <a href="/nieuwste-aanbod" class="bg-yellow-500 text-white px-6 py-2 rounded hover:bg-yellow-600 transition-colors">Nieuwste Aanbod</a>
+    </div>
+  </div>
+</div>
