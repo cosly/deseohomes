@@ -1,0 +1,82 @@
+---
+// Definieer je JavaScript in een script tag binnen de Astro-component
+let lastScroll = 0;
+let header;
+
+const handleScroll = () => {
+  const currentScroll = window.pageYOffset;
+  if (!header) {
+    header = document.getElementById('header');
+  }
+
+  if (header) {
+    if (currentScroll <= 0) {
+      header.style.backgroundColor = 'transparent';
+    }
+
+    if (currentScroll > lastScroll) {
+      // Scroll naar beneden
+      header.classList.add('slide-up');
+      header.classList.remove('slide-down');
+      header.style.backgroundColor = '';
+    } else if (currentScroll < lastScroll) {
+      // Scroll naar boven
+      header.classList.add('slide-down');
+      header.classList.remove('slide-up');
+      header.style.backgroundColor = '#262626'; // Gebruik de kleur van de footer.
+    }
+
+    lastScroll = currentScroll;
+  }
+};
+
+if (typeof window !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', (event) => {
+    header = document.getElementById('header');
+    window.addEventListener('scroll', handleScroll);
+  });
+}
+---
+<header id="header" class="fixed top-0 left-0 w-full z-50 transition transform">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <div class="flex lg:flex-1">
+        <!-- Logo en link naar home -->
+        <a href="/" class="-m-1.5 p-1.5">
+          <img class="h-8 w-auto" src="/assets/images/Logo-DESEO-WIt-12-x-5-1 1.png" alt="DESEO HOMES logo">
+        </a>
+      </div>
+      <!-- Navigatielinks voor grote schermen -->
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="/" class="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">Home</a>
+        <a href="/over-ons" class="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">Over Ons</a>
+        <!-- Dropdown voor Diensten -->
+        <div class="relative">
+          <button type="button" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" aria-expanded="false">
+            Onze Diensten
+            <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <!-- Icon voor dropdown -->
+            </svg>
+          </button>
+          <!-- Dropdown Menu Items -->
+          <div class="absolute left-0 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+            <!-- Voeg hier je submenu-items toe -->
+          </div>
+        </div>
+        <a href="/woningaanbod" class="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">Woningaanbod</a>
+        <a href="/nieuws" class="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">Nieuws</a>
+        <a href="/contact" class="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">Contact</a>
+        <!-- Taalselectie of andere functionaliteiten -->
+      </div>
+      <!-- Mobile menu button -->
+      <div class="flex lg:hidden">
+        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <!-- Mobile menu icon -->
+        </button>
+      </div>
+      <!-- Rechterzijde van de navigatie voor grote schermen -->
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="/nl" class="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">NL</a>
+        <!-- Andere talen of links kunnen hier -->
+      </div>
+    </nav>
+  </header>
